@@ -1,0 +1,15 @@
+Requisitos do Sistema
+
+Python: Versão 3.8 ou superior.
+
+Bibliotecas Python:
+
+openpyxl para manipulação de planilhas Excel.
+
+python-docx para manipulação de documentos Word.
+
+Outros:
+
+Arquivo Excel com dados estruturados.
+
+Modelo de documento Word contendo as TAGs predefinidas.

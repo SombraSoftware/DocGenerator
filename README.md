@@ -1,48 +1,68 @@
-# Preenchedor Automático de documentos de texto em Python.
+DocGenerator
 
-Um programa simples para preencher documentos do Microsoft Word em lotes usando como base dados de planilhas do Excel.
-Para rodar o programa é necessário verificar se as bibliotecas estão devidamente instaladas em seu ambiente python
+DescriçãoO DocGenerator é um programa em Python projetado para facilitar a criação de documentos personalizados, como certificados. Ele utiliza modelos de documentos Word (.docx) e dados fornecidos em uma planilha Excel para gerar documentos automaticamente, economizando tempo e reduzindo erros manuais.
 
-Biblioteca usada para leitura de arquivos (.docx)
->pip install python-docx
+Funcionalidades
 
-Biblioteca usada para leitura de arquivos (.xlsx)
->pip install openpyxl
+Preenchimento Automático: Substitui TAGs predefinidas no modelo Word com os dados fornecidos na planilha.
 
---------------------------------------------------------
+Flexibilidade no Modelo: Aceita qualquer modelo de certificado no formato Word com TAGs predefinidas.
 
-# Preenchedor do Histórico Escolar
+Geração em Massa: Processa vários registros em uma única execução.
 
-Descrição do código:
+Manutenção da Formatação: Preserva a formatação original do documento.
 
-1. Importação de Bibliotecas:
+Fácil Configuração: Não requer conhecimentos avançados de programação para uso.
 
-- os: Para interagir com o sistema operacional, como manipulação de caminhos de arquivo;
-- Document do módulo docx: Para criar, modificar e salvar documentos DOCX;
-- load_workbook do módulo openpyxl: Para carregar dados de planilhas Excel;
+Requisitos do Sistema
 
-2. Função carregar_dados(planilha):
+Python: Versão 3.8 ou superior.
 
-- Essa função carrega os dados de uma planilha Excel especificada e os retorna como uma lista de listas, 
-onde cada lista interna representa uma linha da planilha.
+Bibliotecas Python:
 
-3. Função substituir_tags(doc_modelo, tags, data):
+openpyxl para manipulação de planilhas Excel.
 
-- Esta função substitui as tags dentro de um documento DOCX pelos dados fornecidos. As tags são especificadas como 
-strings e são substituídas pelos valores correspondentes em data.
+python-docx para manipulação de documentos Word.
 
-4. Função preencher_notas(...):
+Outros:
 
-- Esta é a função principal que coordena todo o processo de preenchimento dos documentos.
-- Primeiro, ela carrega os dados de várias planilhas Excel que contêm informações sobre alunos, componentes, 
-competências, notas, conceitos e pareceres.
-- Em seguida, itera sobre os dados dos alunos, preenchendo o modelo de documento DOCX com os dados específicos 
-de cada aluno.
-- Finalmente, salva o documento preenchido no diretório especificado.
+Arquivo Excel com dados estruturados.
 
-5. Definição do diretório de saída dos arquivos (saida_notas).
+Modelo de documento Word contendo as TAGs predefinidas.
 
-6. Chamada da função preencher_notas(...) com os nomes das planilhas e o modelo de documento fornecidos como argumentos.
+Exemplo de Uso
 
-O script segue uma abordagem procedural e executa operações em uma sequência definida para realizar o preenchimento 
-dos documentos.
+Prepare um modelo de certificado no Word com TAGs como {NOME_ALUNO}, {NASCIMENTO}, etc.
+
+Crie uma planilha Excel contendo os dados correspondentes às TAGs.
+
+Execute o script Python para gerar os certificados:
+
+python src/preencher_certificados.py
+
+Os documentos gerados serão salvos no diretório output/.
+
+Estrutura do Projeto
+
+data/: Contém arquivos de entrada, como o modelo de certificado e a planilha.
+
+output/: Diretório para os arquivos gerados.
+
+src/: Código-fonte do programa.
+
+preencher_certificados.py: Script principal.
+
+utils/: Funções auxiliares.
+
+tests/: Casos de teste para validar o funcionamento do programa.
+
+README.md: Documentação do projeto.
+
+Licença
+
+Este projeto é disponibilizado sob a MIT License, permitindo o uso, modificação e distribuição do software conforme os termos definidos.
+
+Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias no projeto.
+
